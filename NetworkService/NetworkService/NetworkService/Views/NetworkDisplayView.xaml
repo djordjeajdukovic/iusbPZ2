@@ -121,7 +121,6 @@
                         </UniformGrid>
                         <Canvas IsHitTestVisible="False">
                             <Line X1="95" Y1="78" X2="260" Y2="78" Stroke="#111827" StrokeThickness="2" />
-                            <TextBlock Text="linija veze" Canvas.Left="155" Canvas.Top="52" Foreground="#6B7280" />
                         </Canvas>
                     </Grid>
                 </DockPanel>
