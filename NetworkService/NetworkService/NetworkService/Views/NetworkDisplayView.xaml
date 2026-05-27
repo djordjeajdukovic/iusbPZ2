@@ -122,7 +122,6 @@
                         <Canvas IsHitTestVisible="False">
                             <Line X1="95" Y1="78" X2="260" Y2="78" Stroke="#111827" StrokeThickness="2" />
                             <TextBlock Text="linija veze" Canvas.Left="155" Canvas.Top="52" Foreground="#6B7280" />
-                            <Line X1="95" Y1="78" X2="430" Y2="282" Stroke="#111827" StrokeThickness="2" StrokeDashArray="3 2" />
                         </Canvas>
                     </Grid>
                 </DockPanel>
