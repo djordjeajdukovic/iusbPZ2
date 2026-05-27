@@ -1,0 +1,145 @@
+<UserControl x:Class="NetworkService.Views.NetworkDisplayView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignHeight="650" d:DesignWidth="1100">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Network Display View - Drag&amp;Drop mreza" FontSize="22" FontWeight="Bold" Margin="8,0,0,8" />
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="260" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="260" />
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" Style="{StaticResource PanelBorderStyle}">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" Style="{StaticResource SectionTitleStyle}" Text="TreeView po tipu" />
+                    <TreeView ToolTip="Entiteti se prevlace na slobodno Canvas polje">
+                        <TreeViewItem Header="Kablovski senzor" IsExpanded="True">
+                            <TreeViewItem Header="4 - Ventil D4 | 18.1 MP | Nevalidno" />
+                            <TreeViewItem Header="5 - Ventil E5 | 11.0 MP | Validno" />
+                        </TreeViewItem>
+                        <TreeViewItem Header="Digitalni manometar" IsExpanded="True">
+                            <TreeViewItem Header="6 - Ventil F6 | 8.8 MP | Validno" />
+                        </TreeViewItem>
+                    </TreeView>
+                    <Border DockPanel.Dock="Bottom" BorderBrush="#CBD5E1" BorderThickness="1" Padding="8" Margin="0,10,0,0" Background="#F8FAFC">
+                        <TextBlock Text="Kada se entitet prevuce na mrezu, nestaje iz TreeView-a. Kada se ukloni sa mreze, vraca se nazad." TextWrapping="Wrap" />
+                    </Border>
+                </DockPanel>
+            </Border>
+
+            <Border Grid.Column="1" Style="{StaticResource PanelBorderStyle}">
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0,0,0,8">
+                        <TextBlock Style="{StaticResource SectionTitleStyle}" Text="12 Canvas polja" Margin="0,0,12,0" />
+                        <Button Content="Povezi izabrane" ToolTip="Iscrtavanje linije izmedju dva entiteta" />
+                        <Button Content="Ukloni sa mreze" ToolTip="Vraca entitet u TreeView i brise njegove linije" />
+                        <Button Content="Undo" ToolTip="Ponisti poslednju akciju" />
+                        <Button Content="Undo All" ToolTip="CG4: ponisti sve akcije na mrezi" />
+                    </StackPanel>
+
+                    <Grid>
+                        <UniformGrid Rows="3" Columns="4">
+                            <Canvas Background="#E5E7EB" AllowDrop="True" ToolTip="Canvas polje 1">
+                                <Rectangle Width="130" Height="86" Stroke="#9CA3AF" StrokeThickness="1" Fill="#FFFFFF" Canvas.Left="10" Canvas.Top="10" />
+                                <Ellipse Width="32" Height="32" Stroke="#111827" StrokeThickness="1" Fill="#F3F4F6" Canvas.Left="20" Canvas.Top="18" />
+                                <TextBlock Text="Ventil A1" FontWeight="SemiBold" Canvas.Left="60" Canvas.Top="18" />
+                                <TextBlock Text="ID: 1" Canvas.Left="60" Canvas.Top="40" />
+                                <TextBlock Text="10.5 MP" Canvas.Left="60" Canvas.Top="60" />
+                                <TextBlock Text="Polje 1" Foreground="#6B7280" Canvas.Left="10" Canvas.Top="102" />
+                            </Canvas>
+<Canvas Background="#E5E7EB" AllowDrop="True" ToolTip="Canvas polje 2">
+                                <Rectangle Width="130" Height="86" Stroke="#9CA3AF" StrokeThickness="1" Fill="#FFFFFF" Canvas.Left="10" Canvas.Top="10" />
+                                <Ellipse Width="32" Height="32" Stroke="#111827" StrokeThickness="1" Fill="#F3F4F6" Canvas.Left="20" Canvas.Top="18" />
+                                <TextBlock Text="Ventil B2" FontWeight="SemiBold" Canvas.Left="60" Canvas.Top="18" />
+                                <TextBlock Text="ID: 2" Canvas.Left="60" Canvas.Top="40" />
+                                <TextBlock Text="13.2 MP" Canvas.Left="60" Canvas.Top="60" />
+                                <TextBlock Text="Polje 2" Foreground="#6B7280" Canvas.Left="10" Canvas.Top="102" />
+                            </Canvas>
+<Canvas Background="#F9FAFB" AllowDrop="True" ToolTip="Slobodno Canvas polje 3">
+                                <Rectangle Width="130" Height="86" Stroke="#9CA3AF" StrokeThickness="1" StrokeDashArray="4 2" Fill="#FFFFFF" Canvas.Left="10" Canvas.Top="10" />
+                                <TextBlock Text="Drop here" Foreground="#6B7280" Canvas.Left="45" Canvas.Top="43" />
+                                <TextBlock Text="Polje 3" Foreground="#6B7280" Canvas.Left="10" Canvas.Top="102" />
+                            </Canvas>
+<Canvas Background="#F9FAFB" AllowDrop="True" ToolTip="Slobodno Canvas polje 4">
+                                <Rectangle Width="130" Height="86" Stroke="#9CA3AF" StrokeThickness="1" StrokeDashArray="4 2" Fill="#FFFFFF" Canvas.Left="10" Canvas.Top="10" />
+                                <TextBlock Text="Drop here" Foreground="#6B7280" Canvas.Left="45" Canvas.Top="43" />
+                                <TextBlock Text="Polje 4" Foreground="#6B7280" Canvas.Left="10" Canvas.Top="102" />
+                            </Canvas>
+<Canvas Background="#F9FAFB" AllowDrop="True" ToolTip="Slobodno Canvas polje 5">
+                                <Rectangle Width="130" Height="86" Stroke="#9CA3AF" StrokeThickness="1" StrokeDashArray="4 2" Fill="#FFFFFF" Canvas.Left="10" Canvas.Top="10" />
+                                <TextBlock Text="Drop here" Foreground="#6B7280" Canvas.Left="45" Canvas.Top="43" />
+                                <TextBlock Text="Polje 5" Foreground="#6B7280" Canvas.Left="10" Canvas.Top="102" />
+                            </Canvas>
+<Canvas Background="#E5E7EB" AllowDrop="True" ToolTip="Canvas polje 6">
+                                <Rectangle Width="130" Height="86" Stroke="#9CA3AF" StrokeThickness="1" Fill="#FFFFFF" Canvas.Left="10" Canvas.Top="10" />
+                                <Ellipse Width="32" Height="32" Stroke="#111827" StrokeThickness="1" Fill="#F3F4F6" Canvas.Left="20" Canvas.Top="18" />
+                                <TextBlock Text="Ventil C3" FontWeight="SemiBold" Canvas.Left="60" Canvas.Top="18" />
+                                <TextBlock Text="ID: 3" Canvas.Left="60" Canvas.Top="40" />
+                                <TextBlock Text="7.8 MP" Canvas.Left="60" Canvas.Top="60" />
+                                <TextBlock Text="Polje 6" Foreground="#6B7280" Canvas.Left="10" Canvas.Top="102" />
+                            </Canvas>
+<Canvas Background="#F9FAFB" AllowDrop="True" ToolTip="Slobodno Canvas polje 7">
+                                <Rectangle Width="130" Height="86" Stroke="#9CA3AF" StrokeThickness="1" StrokeDashArray="4 2" Fill="#FFFFFF" Canvas.Left="10" Canvas.Top="10" />
+                                <TextBlock Text="Drop here" Foreground="#6B7280" Canvas.Left="45" Canvas.Top="43" />
+                                <TextBlock Text="Polje 7" Foreground="#6B7280" Canvas.Left="10" Canvas.Top="102" />
+                            </Canvas>
+<Canvas Background="#F9FAFB" AllowDrop="True" ToolTip="Slobodno Canvas polje 8">
+                                <Rectangle Width="130" Height="86" Stroke="#9CA3AF" StrokeThickness="1" StrokeDashArray="4 2" Fill="#FFFFFF" Canvas.Left="10" Canvas.Top="10" />
+                                <TextBlock Text="Drop here" Foreground="#6B7280" Canvas.Left="45" Canvas.Top="43" />
+                                <TextBlock Text="Polje 8" Foreground="#6B7280" Canvas.Left="10" Canvas.Top="102" />
+                            </Canvas>
+<Canvas Background="#F9FAFB" AllowDrop="True" ToolTip="Slobodno Canvas polje 9">
+                                <Rectangle Width="130" Height="86" Stroke="#9CA3AF" StrokeThickness="1" StrokeDashArray="4 2" Fill="#FFFFFF" Canvas.Left="10" Canvas.Top="10" />
+                                <TextBlock Text="Drop here" Foreground="#6B7280" Canvas.Left="45" Canvas.Top="43" />
+                                <TextBlock Text="Polje 9" Foreground="#6B7280" Canvas.Left="10" Canvas.Top="102" />
+                            </Canvas>
+<Canvas Background="#F9FAFB" AllowDrop="True" ToolTip="Slobodno Canvas polje 10">
+                                <Rectangle Width="130" Height="86" Stroke="#9CA3AF" StrokeThickness="1" StrokeDashArray="4 2" Fill="#FFFFFF" Canvas.Left="10" Canvas.Top="10" />
+                                <TextBlock Text="Drop here" Foreground="#6B7280" Canvas.Left="45" Canvas.Top="43" />
+                                <TextBlock Text="Polje 10" Foreground="#6B7280" Canvas.Left="10" Canvas.Top="102" />
+                            </Canvas>
+<Canvas Background="#F9FAFB" AllowDrop="True" ToolTip="Slobodno Canvas polje 11">
+                                <Rectangle Width="130" Height="86" Stroke="#9CA3AF" StrokeThickness="1" StrokeDashArray="4 2" Fill="#FFFFFF" Canvas.Left="10" Canvas.Top="10" />
+                                <TextBlock Text="Drop here" Foreground="#6B7280" Canvas.Left="45" Canvas.Top="43" />
+                                <TextBlock Text="Polje 11" Foreground="#6B7280" Canvas.Left="10" Canvas.Top="102" />
+                            </Canvas>
+<Canvas Background="#F9FAFB" AllowDrop="True" ToolTip="Slobodno Canvas polje 12">
+                                <Rectangle Width="130" Height="86" Stroke="#9CA3AF" StrokeThickness="1" StrokeDashArray="4 2" Fill="#FFFFFF" Canvas.Left="10" Canvas.Top="10" />
+                                <TextBlock Text="Drop here" Foreground="#6B7280" Canvas.Left="45" Canvas.Top="43" />
+                                <TextBlock Text="Polje 12" Foreground="#6B7280" Canvas.Left="10" Canvas.Top="102" />
+                            </Canvas>
+                        </UniformGrid>
+                        <Canvas IsHitTestVisible="False">
+                            <Line X1="95" Y1="78" X2="260" Y2="78" Stroke="#111827" StrokeThickness="2" />
+                            <TextBlock Text="linija veze" Canvas.Left="155" Canvas.Top="52" Foreground="#6B7280" />
+                            <Line X1="95" Y1="78" X2="430" Y2="282" Stroke="#111827" StrokeThickness="2" StrokeDashArray="3 2" />
+                        </Canvas>
+                    </Grid>
+                </DockPanel>
+            </Border>
+
+            <Border Grid.Column="2" Style="{StaticResource PanelBorderStyle}">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" Style="{StaticResource SectionTitleStyle}" Text="History paleta - CG4" />
+                    <ListBox ItemsSource="{Binding HistoryItems}" />
+                    <Border DockPanel.Dock="Bottom" BorderBrush="#DC2626" BorderThickness="1" Padding="8" Margin="0,10,0,0" Background="#FEF2F2">
+                        <StackPanel>
+                            <TextBlock FontWeight="SemiBold" Foreground="#DC2626" Text="Vizuelna opasnost" />
+                            <TextBlock Text="Ako je merenje van 5-16 MP, polje dobija crven okvir ili statusnu sliku." TextWrapping="Wrap" />
+                        </StackPanel>
+                    </Border>
+                </DockPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>
